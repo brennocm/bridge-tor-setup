@@ -1,6 +1,8 @@
-# setup.sh — Hardening + Bridge Tor + Monitoramento
+# bridge-tor-setup
 
-Script único que prepara uma VPS Debian do zero: hardening básico, Docker, e a stack completa (bridge Tor obfs4 + Uptime Kuma + resumo diário no Telegram).
+Um script (`setup.sh`) que prepara uma VPS Debian do zero e sobe uma bridge Tor obfs4 com monitoramento: hardening básico, Docker, a bridge oficial do Tor Project, Uptime Kuma e um resumo diário no Telegram.
+
+Uma bridge ajuda quem está em países que bloqueiam o Tor a se conectar. Diferente de um relé, ela não aparece na lista pública da rede.
 
 ## O que ele faz
 
@@ -60,3 +62,7 @@ O **Uptime Kuma** não é configurável por arquivo — só pela interface web d
 
 - `.env: line X: 9: command not found` → falta aspas em `CRON_SCHEDULE`. Corrija para `CRON_SCHEDULE="0 9 * * *"`.
 - Bridge não inicia / erro de "Nickname" → `BRIDGE_NICKNAME` tem caractere inválido (hífen, underscore, espaço, acento) ou mais de 19 caracteres.
+
+## Licença
+
+[MIT](LICENSE)
